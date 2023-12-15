@@ -18,16 +18,6 @@ console.log(`Question: ${randomNumber}`);
 // вводи да или нет
 const answer = readlineSync.question('Your answer: ');
 // вводи да или нет
-function ret() {
-  const niger = ' ';
-  if (randomNumber % 2 === 0) {
-    const niger = 'yes';
-  } else if (randomNumber % 2 !== 0) {
-    const niger = 'no';
-  }
-  return niger;
-}
-const neverno = ret;
 if (randomNumber % 2 === 0 && answer === 'yes') {
   console.log('Correct!');
 }
@@ -44,8 +34,12 @@ if (randomNumber % 2 !== 0 && answer === 'yes') {
   console.log(`${answer} is wrong answer ;(. Correct answer was 'no'`);
   console.log("Let's try again, Bill!");
 }
-if (answer !== 'no' || answer !== 'yes') {
-  console.log(`${answer} is wrong answer ;(. Correct answer was ${neverno}`);
+if (answer !== 'no' && answer !== 'yes' && randomNumber % 2 === 0) {
+  console.log(`${answer} is wrong answer ;(. Correct answer was 'yes'`);
+  console.log("Let's try again, Bill!");
+}
+if (answer !== 'no' && answer !== 'yes' && randomNumber % 2 !== 0) {
+  console.log(`${answer} is wrong answer ;(. Correct answer was 'no'`);
   console.log("Let's try again, Bill!");
 }
 // ответил неправиильно
